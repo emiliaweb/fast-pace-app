@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 import './Footer.scss';
 import logo from './fast-pace-logo-white.svg';
@@ -15,9 +15,9 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-wrap">
                     <div className="footer-col first">
-                        <a href="#" className="footer-logo">
+                        <Link to="/" className="footer-logo">
                             <img src={logo} alt="Fast Pace" />
-                        </a>
+                        </Link>
                         <div className="footer-credit">
                             (c) 2020-2023 Fast Pace <br />
                             Designed & coded by <a href="https://github.com/emiliaweb">Emilia</a>
@@ -40,13 +40,13 @@ const Footer = () => {
                     <nav className="footer-col">
                         <ul className="footer-menu">
                             <li className="footer-menu-item">
-                                <a href="#">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li className="footer-menu-item">
-                                <a href="#">About</a>
+                                <Link to="/">About</Link>
                             </li>
                             <li className="footer-menu-item">
-                                <a href="#">Catalog</a>
+                                <Link to="/Catalog">Catalog</Link>
                             </li>
                         </ul>
                     </nav>
