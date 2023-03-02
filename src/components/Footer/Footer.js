@@ -1,7 +1,15 @@
+import { useLocation } from 'react-router-dom';
+
 import './Footer.scss';
 import logo from './fast-pace-logo-white.svg';
 
 const Footer = () => {
+    const {key} = useLocation();
+    
+    if (key === 'default') {
+        return null;
+    }
+
     return (
         <footer class="footer spacer-100">
             <div class="container">
