@@ -1,0 +1,28 @@
+.showcase {
+    &-grid {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: clamp(1.8rem, 2vw, 2.3rem);
+    }
+    &-link {
+        margin: 6rem auto 0;
+        max-width: max-content;
+    }
+}
+
+@media (max-width: 1023px) {
+    .showcase {
+        &-grid {
+            width: 100%;
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+            .card {
+                scroll-snap-align: start;
+                &-img {
+                    min-width: 18rem;
+                }
+            }
+        }
+    }
+}

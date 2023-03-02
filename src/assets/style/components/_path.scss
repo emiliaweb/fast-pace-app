@@ -1,0 +1,21 @@
+.path {
+    &-link {
+        font-size: 1.8rem;
+        line-height: 1.2em;
+        color: var(--clr-primary);
+        transition: all .3s;
+        &:not(:last-child) {
+            &::after {
+                content: '/';
+                padding: 0 .4em;
+                color: var(--clr-primary);
+            }
+        }
+        &:hover {
+            color: var(--clr-accent);
+        }
+        &--current {
+            font-weight: 600;
+        }
+    }
+}

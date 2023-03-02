@@ -1,0 +1,94 @@
+.filters {
+    margin-top: 6rem;
+    &-price, &-colors {
+        display: flex;
+        align-items: center;
+        column-gap: clamp(2rem, 2.5vw, 3rem);
+        &-wrap {
+            display: flex;
+            column-gap: 2rem;
+        }
+        &-item {
+            transition: all .3s;
+            &:hover {
+                transform: translateY(-4px);
+                opacity: .8;
+            }
+        }
+    }
+    &-wrap {
+        display: flex;
+        align-items: center;
+        column-gap: 6rem;
+    }
+    &-colors {
+        &-item {
+            .outline {
+                transition: all .3s;
+            }
+            &.active {
+                .outline {
+                    stroke-width: 2px;
+                    stroke-opacity: 1;
+                    transform: scale(.98);
+                    transform-origin: center;
+                }
+            }
+        }
+    }
+    &-price {
+        &-item {
+            display: inline-block;
+            padding: 1.2rem 2.8rem;
+            border: 1px solid var(--clr-primary);
+            border-radius: 5rem;
+            font-weight: 500;
+            font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+            line-height: 1.2em;
+            color: var(--clr-primary);
+            &.active {
+                background-color: var(--clr-primary);
+                color: var(--clr-light);
+            }
+            @media (max-width: 1023px) {
+                padding: .8rem 1.6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .filters {
+        margin-top: 4rem;
+        &-icon {
+            max-width: 3.2rem;
+        }
+        &-price {
+            &-wrap {
+                column-gap: 1.4rem;
+            }
+        }
+        &-colors {
+            &-wrap {
+                column-gap: 1.2rem;
+            }
+            &-item {
+                max-width: clamp(3rem, 4.5vw, 4.5rem);
+            }
+        }
+        &-wrap {
+            column-gap: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .filters {
+        &-wrap {
+            display: block;
+        }
+        &-colors {
+            margin-top: 3rem;
+        }
+    }
+}

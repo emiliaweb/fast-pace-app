@@ -1,0 +1,37 @@
+.hero {
+    padding: 20rem 0 12rem;
+    min-height: 70rem;
+    background: url('./background-1920.jpg') center bottom / cover no-repeat;
+    @media (max-width: 1560px) {
+        background-image: url('./background.jpg');
+    }
+    @media (max-width: 1140px) {
+        padding: 14rem 0 12rem;
+        min-height: auto;
+    }
+    @media (max-width: 575px) {
+        background-image: url('./background-576.jpg');
+        min-height: 70rem;
+        padding: 11rem 0;
+    }
+    @media (max-width: 419px) {
+        background-image: url('./background-375.jpg');
+    }
+    &-title {
+        max-width: 7.5em;
+    }
+    &-text{
+        max-width: 24em;
+    }
+    &-btns {
+        margin-top: 3rem;
+        display: flex;
+        column-gap: 3rem;
+        @media (max-width: 767px) {
+            column-gap: 2.5rem;
+        }
+        @media (max-width: 374px) {
+            column-gap: 1.5rem;
+        }
+    }
+}

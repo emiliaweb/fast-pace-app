@@ -1,0 +1,32 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 6px;
+    padding: 1.2rem 2.8rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.2em;
+    column-gap: 1rem;
+    border: 2px solid transparent;
+    transition: all .3s;
+    &:hover {
+        transform: translateY(-4px);
+        opacity: .8;
+    }
+    &--primary {
+        color: var(--clr-light);
+        background-color: var(--clr-accent);
+    }
+    &--outline {
+        border: 2px solid var(--clr-neutral);
+        color: var(--clr-neutral);
+    }
+    &--dark {
+        color: var(--clr-light);
+        background-color: var(--clr-primary);
+    }
+    @media (max-width: 1023px) {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+}

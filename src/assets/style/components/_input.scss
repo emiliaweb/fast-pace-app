@@ -1,0 +1,26 @@
+.input {
+    width: 100%;
+    padding: 1.8rem 0;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    line-height: 1.2em;
+    color: var(--clr-primary);
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--clr-primary);
+    opacity: 0.6;
+    transition: opacity .3s;
+    &:focus, &:focus-visible, &:focus-within {
+        opacity: 1;
+        border-bottom: 2px solid var(--clr-primary);
+    }
+    &:hover {
+        opacity: 1;
+    }
+    &--invalid {
+        color: var(--clr-accent);
+        border-bottom: 2px solid var(--clr-accent) !important;
+        background-color: rgb(255, 219, 219);
+    }
+}

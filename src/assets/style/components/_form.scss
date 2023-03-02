@@ -1,0 +1,16 @@
+.form {
+    &-price {
+        color: var(--clr-accent);
+    }
+    &-agreement {
+        max-width: 28rem;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.1em;
+        a {
+            font-weight: 500;
+            color: var(--clr-accent);
+            text-decoration: underline;
+        }
+    }
+}

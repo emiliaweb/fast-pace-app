@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import 'abstracts/variables';
+
+@import 'components/btn';
+@import 'components/title';
+@import 'components/arrow-link';
+@import 'components/card'; // this is temporary until I set up a card component
+
+body, html {
+    background-color: #F9FBFF;
+}
+
+body {
+    font-size: var(--fz-300);
+    font-family: var(--ff-primary);
+    color: var(--clr-primary);
+}
+
+.container {
+    max-width: 108rem;
+    margin: 0 auto;
+    @media (max-width: 1139px) {
+        padding: 0 1.5rem;
+    }
+}
+
+.body-text {
+    font-weight: 400;
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    line-height: 1.2em;
+    margin-top: 2rem;
+}
+
+.spacer-100 {
+    margin-top: 10rem;
+    @media (max-width: 1023px) {
+        margin-top: 8rem;
+    }
+}
+
+.spacer-170 {
+    margin-top: 17rem;
+    @media (max-width: 1023px) {
+        margin-top: 12rem;
+    }
+}

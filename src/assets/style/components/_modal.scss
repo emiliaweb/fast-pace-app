@@ -1,0 +1,64 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    &-overlay {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(38, 39, 60, 0.6);
+        backdrop-filter: blur(3px);
+        display: grid;
+        place-content: center;
+    }
+    &-content {
+        background-color: var(--clr-light);
+        border-radius: 12px;
+        padding: 4rem 4rem 5rem;
+        max-width: 52.6rem;
+    }
+    &-form {
+        margin-top: 3rem;
+        .input {
+            &:not(:first-child) {
+                margin-top: 3rem;
+            }
+        }
+        &-info, &-footer {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-footer {
+            margin-top: 3rem;
+        }
+        &-btn {
+            min-width: 12.7rem;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .modal {
+        &-content {
+            padding: 2rem;
+        }
+        &-form {
+            margin-top: 1rem;
+            .input {
+                &:not(:first-child) {
+                    margin-top: 2rem;
+                }
+            }
+            &-info {
+                margin-top: 1rem;
+            }
+            &-footer {
+                margin-top: 2rem;
+            }
+            .form-agreement {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

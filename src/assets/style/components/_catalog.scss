@@ -1,0 +1,34 @@
+.catalog {
+    margin-top: 6rem;
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2.3rem;
+        row-gap: 7rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .catalog {
+        margin-top: 4rem;
+        &-wrap {
+            column-gap: 1.7rem;
+            row-gap: 4rem;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .catalog {
+        --min-item: 15rem;
+        &-wrap {
+            grid-template-columns: repeat(auto-fit, minmax(var(--min-item), 1fr));
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .catalog {
+        --min-item: 13rem;
+    }
+}
