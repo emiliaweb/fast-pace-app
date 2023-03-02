@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './Header.scss';
 import logo from './fast-pace-logo.svg';
 
@@ -12,13 +14,13 @@ const Header = () => {
                     <nav class="header-nav">
                         <ul class="header-list">
                             <li class="header-list-item">
-                                <a href="#">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li class="header-list-item">
-                                <a href="#">About</a>
+                                <Link to="/">About</Link>
                             </li>
                             <li class="header-list-item">
-                                <a href="#">Catalog</a>
+                            <Link to="/catalog">Catalog</Link>
                             </li>
                         </ul>
                     </nav>
