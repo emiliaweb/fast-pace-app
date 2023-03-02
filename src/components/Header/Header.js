@@ -5,21 +5,21 @@ import logo from './fast-pace-logo.svg';
 
 const Header = () => {
     return (
-        <header class="header">
-            <div class="container">
-                <div class="header-wrap">
-                    <a href="#" class="header-logo">
+        <header className="header">
+            <div className="container">
+                <div className="header-wrap">
+                    <a href="#" className="header-logo">
                         <img src={logo} alt="Fast Pace logo" />
                     </a>
-                    <nav class="header-nav">
-                        <ul class="header-list">
-                            <li class="header-list-item">
+                    <nav className="header-nav">
+                        <ul className="header-list">
+                            <li className="header-list-item">
                                 <Link to="/">Home</Link>
                             </li>
-                            <li class="header-list-item">
+                            <li className="header-list-item">
                                 <Link to="/">About</Link>
                             </li>
-                            <li class="header-list-item">
+                            <li className="header-list-item">
                             <Link to="/catalog">Catalog</Link>
                             </li>
                         </ul>
