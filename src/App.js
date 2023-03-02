@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/catalog' element={<CatalogPage />} />
-        <Route path='/catalog/single' element={<Single />} />
+        <Route path='/catalog/:id' element={<Single />} />
         <Route path='*' element={<NoMatch />} />
       </Routes>
 
