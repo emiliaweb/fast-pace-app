@@ -44,6 +44,34 @@ const CatalogPage = () => {
         
     }
 
+    const filterByPrice = () => {
+        return products.filter((item) => {
+            switch(priceFilter) {
+                case '>50':
+                    return item.price.amount > 50;
+                case '<50':
+                    return item.price.amount < 50;
+                default: 
+                    return item;
+            }
+        });
+    }
+
+    const filterByColor = (items) => {
+        return items.filter((item) => {
+            switch(colorFilter) {
+                case '':
+                    return item;
+                default: 
+                    return item.color === colorFilter;
+            }
+        });
+    }
+
+    const visibleProducts = filterByColor(filterByPrice());
+
+    console.log('render');
+
     return (
         <>
             <div className="spacer-170">
@@ -53,7 +81,7 @@ const CatalogPage = () => {
                 </div>
             </div>
             <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter}/>
-            <Catalog products={products} loading={loading} />
+            <Catalog products={visibleProducts} loading={loading} />
         </>
     )
 }
