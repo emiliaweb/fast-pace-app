@@ -38,7 +38,9 @@ const Showcase = () => {
     }
 
     useEffect(() => {
-        getRandomProducts();
+        setTimeout(() => {
+            getRandomProducts();
+        }, 1500)
     }, []);
 
     const renderProducts = () => {

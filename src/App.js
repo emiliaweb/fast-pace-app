@@ -31,7 +31,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path='/' element={<HomePage products={products} />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/catalog' element={<CatalogPage />} />
         <Route path='/catalog/:id' element={<Single />} />
         <Route path='*' element={<NoMatch />} />
