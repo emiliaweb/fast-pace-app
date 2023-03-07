@@ -5,7 +5,7 @@ import logo from './fast-pace-logo.svg';
 
 const Header = () => {
     return (
-        <header className="header">
+        <header className="header" id="header">
             <div className="container">
                 <div className="header-wrap">
                     <Link to="/" className="header-logo">

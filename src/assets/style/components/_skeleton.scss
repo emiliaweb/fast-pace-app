@@ -1,0 +1,18 @@
+.skeleton {
+    &-block {
+        background-color: #dfdfdf;
+        animation: pulse 2s ease 0s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: .3;
+    }
+    50% {
+        opacity: .8;
+    }
+    100% {
+        opacity: .3;
+    } 
+}

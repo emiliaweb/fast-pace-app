@@ -4,10 +4,6 @@ import './Footer.scss';
 import logo from './fast-pace-logo-white.svg';
 
 const Footer = () => {
-    const {pathname} = useLocation();
-
-    console.log(pathname);
-
     return (
         <footer className="footer spacer-100">
             <div className="container">
