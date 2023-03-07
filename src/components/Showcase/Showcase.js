@@ -39,9 +39,7 @@ const Showcase = () => {
 
     useEffect(() => {
         getRandomProducts();
-    }, [])
-
-    console.log(loading);
+    }, []);
 
     const renderProducts = () => {
         return products.map(item => (

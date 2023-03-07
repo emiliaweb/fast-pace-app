@@ -3,7 +3,62 @@ import './Filters.scss';
 import filterIcon from './filter.svg';
 import colorIcon from './color-choice.svg';
 
-const Filters = () => {
+const Filters = ({onSetFilter, color, price}) => {
+    const onSelectFilter = (event) => {
+        event.preventDefault();
+
+        const filter = event.target.getAttribute('data-filter-value');
+        const filterType = event.target.getAttribute('data-filter-type');
+        onSetFilter(filter, filterType);
+    }
+
+    const priceFilterData = [
+        { label: 'Below 50$', value: '<50' },
+        { label: 'Above 50$', value: '>50' }
+    ];
+
+    const colorFilterData = [
+        { value: 'black' },
+        { value: 'white' },
+        { value: 'red' },
+        { value: 'orange' },
+        { value: 'yellow' },
+        { value: 'blue' },
+        { value: 'pink' },
+    ];
+
+    const priceFilters = priceFilterData.map((item, i) => {
+        const classes = price === item.value ? 'active' : null;
+        return (
+            <a 
+                href="#" 
+                className={`filters-price-item ${classes}` }
+                data-filter-type="price" 
+                data-filter-value={item.value} 
+                onClick={onSelectFilter} 
+                key={i}>{item.label}</a>
+        )
+    })
+
+    const colorFilters = colorFilterData.map((item, i) => {
+        const classes = color === item.value ? 'active' : null;
+        return (
+            <a 
+                href="#" 
+                className={`filters-colors-item ${classes}`} 
+                data-filter-type="color" 
+                data-filter-value={item.value} 
+                onClick={onSelectFilter} 
+                aria-label={item.value} 
+                key={i}>
+                <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
+                    <circle cx="22.5" cy="22.5" r="15.5" fill={item.value} className="swatch"/>
+                </svg>                        
+            </a>
+        )
+    });
+
     return (
         <div className="filters">
             <div className="container filters-wrap">
@@ -12,8 +67,7 @@ const Filters = () => {
                         <img src={filterIcon} alt="Filter icon" />
                     </div>
                     <div className="filters-price-wrap">
-                        <a href="#" className="filters-price-item active">Below 50$</a>
-                        <a href="#" className="filters-price-item">Above 50$</a>
+                        {priceFilters}
                     </div>
                 </div>
                 <div className="filters-colors">
@@ -21,48 +75,7 @@ const Filters = () => {
                         <img src={colorIcon} alt="Color-choice icon" />
                     </div>
                     <div className="filters-colors-wrap">
-                        <a href="#" className="filters-colors-item active" data-color="black" aria-label="black">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="black" className="swatch"/>
-                            </svg>                        
-                        </a>
-                        <a href="#" className="filters-colors-item" data-color="white" aria-label="white">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="white" className="swatch"/>
-                            </svg>                        
-                        </a>
-                        <a href="#" className="filters-colors-item" data-color="red" aria-label="red">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="red" className="swatch"/>
-                            </svg>                        
-                        </a>
-                        <a href="#" className="filters-colors-item" data-color="orange" aria-label="orange">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="orange" className="swatch"/>
-                            </svg>                        
-                        </a>
-                        <a href="#" className="filters-colors-item" data-color="yellow" aria-label="yellow">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="yellow" className="swatch"/>
-                            </svg>                        
-                        </a>
-                        <a href="#" className="filters-colors-item" data-color="blue" aria-label="blue">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="blue" className="swatch"/>
-                            </svg>                        
-                        </a>
-                        <a href="#" className="filters-colors-item" data-color="pink" aria-label="pink">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22.5" cy="22.5" r="22" stroke="#26273C" strokeOpacity="0.1" className="outline"/>
-                                <circle cx="22.5" cy="22.5" r="15.5" fill="pink" className="swatch"/>
-                            </svg>                        
-                        </a>
+                        {colorFilters}
                     </div>
                 </div>
             </div>
