@@ -16,15 +16,6 @@ import './assets/style/reset.scss';
 import './assets/style/style.scss';
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const { getAllProducts } = useFPService();
-
-  useEffect(() => {
-    getAllProducts()
-      .then(data => {
-        setProducts(data);
-      });
-  }, []);
 
   return (
     <BrowserRouter>
@@ -33,7 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/catalog' element={<CatalogPage />} />
-        <Route path='/catalog/:id' element={<Single />} />
+        <Route path='/catalog/:productID' element={<Single />} />
         <Route path='*' element={<NoMatch />} />
       </Routes>
 

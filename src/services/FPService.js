@@ -13,6 +13,13 @@ const useFPService = () => {
         return data.map(item => _transformProduct(item))
     }
 
+    const getProduct = async (id) => {
+        return await getAllProducts()
+        .then(data => {
+            return data.filter(item => item.id === id)[0];
+        });
+    }
+
     const _transformProduct = (item) => {
         const {title, description, imageURL, isAvailable, color, price} = item.product;
         return {
@@ -27,7 +34,8 @@ const useFPService = () => {
     }
 
     return {
-        getAllProducts
+        getAllProducts,
+        getProduct
     }
 }
 

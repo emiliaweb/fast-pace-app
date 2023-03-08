@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import './Card.scss';
 
 const Card = (props) => {
     const {img, title, price, itemID} = props;
     return (
-        <a href="#" className="card" data-id={itemID}>
+        <Link to={`/catalog/${itemID}`} className="card" data-id={itemID}>
             <div className="card-img">
                 <img src={img} alt="product" />
             </div>
@@ -11,7 +13,7 @@ const Card = (props) => {
             <div className="card-price">
                 <strong>{`${price.amount}$`}</strong>
             </div>
-        </a>
+        </Link>
     )
 }
 

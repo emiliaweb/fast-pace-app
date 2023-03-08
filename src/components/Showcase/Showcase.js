@@ -47,6 +47,7 @@ const Showcase = () => {
         return products.map(item => (
             <Card 
                 key={item.id}
+                itemID={item.id}
                 title={item.title}
                 price={item.price}
                 img={item.imageURL} />
