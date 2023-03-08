@@ -47,7 +47,7 @@ const Single = () => {
         <>
             <div className="path spacer-170">
                 <div className="container">
-                    <Link to="/catalog/" className="path-link">Catalog</Link><a href="#" className="path-link path-link--current">Nike Air 50 Sneakers</a>
+                    <Link to="/catalog/" className="path-link">Catalog</Link><a href="#" className="path-link path-link--current">{title}</a>
                 </div>
             </div>
 
