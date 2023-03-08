@@ -16,12 +16,14 @@ const Catalog = ({products, loading}) => {
 
     const cards = renderProducts();
     const skeleton = loading ? <CardSkeleton /> : null;
+    const message = cards.length === 0 && !loading ? <div className='body-text'>No products available</div> : null;
 
     return (
         <div className="catalog">
             <div className="container catalog-wrap">
-                {skeleton}
                 {cards}
+                {skeleton}
+                {message}
             </div>
         </div>
     )

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Filters from "../../components/Filters/Filters";
 import Catalog from "../../components/Catalog/Catalog";
 import useFPService from "../../services/FPService";
-import Card from "../../components/Card/Card";
 
 const CatalogPage = () => {
     const { getAllProducts } = useFPService();
@@ -31,14 +30,13 @@ const CatalogPage = () => {
         switch(filterType) {
             case 'price': 
                 setPriceFilter(filter);
-                console.log('price', filter);
+                // console.log('price', filter);
                 break;
             case 'color':
                 setColorFilter(filter);
-                console.log('color', filter);
+                // console.log('color', filter);
                 break;
             default: 
-                console.log('default');
                 break;
         }
         

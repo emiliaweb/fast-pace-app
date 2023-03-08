@@ -9,7 +9,10 @@ const Filters = ({onSetFilter, color, price}) => {
 
         const filter = event.target.getAttribute('data-filter-value');
         const filterType = event.target.getAttribute('data-filter-type');
-        onSetFilter(filter, filterType);
+        // Only call onSetFilter if the selected filter is not already active
+        if ((filterType === 'price' && filter !== price) || (filterType === 'color' && filter !== color)) {
+            onSetFilter(filter, filterType);
+        }
     }
 
     const priceFilterData = [
