@@ -90,6 +90,7 @@ const Single = () => {
                 { isActiveModal ? 
                     <Modal 
                         product={title} 
+                        productID={id}
                         price={`${price ? price.amount : null}$`}
                         onCloseModal={onCloseModal} /> 
                 : null }

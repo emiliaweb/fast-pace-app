@@ -7,7 +7,7 @@ import './Input.scss';
 
 import arrow from './arrow-right-light.svg';
 
-const Modal = ({product, price, onCloseModal}) => {
+const Modal = ({product, price, onCloseModal, productID}) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -86,6 +86,12 @@ const Modal = ({product, price, onCloseModal}) => {
                             placeholder="Address*" 
                             className="input" 
                             value={formData.address} />
+                        <input 
+                            readOnly
+                            type="text" 
+                            name="productInfo" 
+                            className="hidden" 
+                            value={`${product} ${productID}`} />
                         <div className="modal-form-info">
                             <h3 className="body-text form-product"><strong>{product}</strong></h3>
                             <div className="body-text form-price"><strong>{price}</strong></div>
