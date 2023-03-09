@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Filters from "../../components/Filters/Filters";
 import Catalog from "../../components/Catalog/Catalog";
 import useFPService from "../../services/FPService";
+import Spotlight from "../../components/Spotlight/Spotlight";
 
 const CatalogPage = () => {
     const { getAllProducts } = useFPService();
@@ -80,6 +81,7 @@ const CatalogPage = () => {
             </div>
             <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter}/>
             <Catalog products={visibleProducts} loading={loading} />
+            <Spotlight />
         </>
     )
 }
