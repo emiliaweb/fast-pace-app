@@ -13,6 +13,7 @@ const Modal = ({product, price, onCloseModal, productID}) => {
         lastName: '',
         phoneNumber: '',
         address: '',
+        productInfo: `${product} ${productID}`
     });
     const [isHiddenForm, setIsHiddenForm] = useState(false);
     const [formTitle, setFormTitle] = useState(<><span>Fill out your credentials</span> to proceed with the order</>);
@@ -41,6 +42,7 @@ const Modal = ({product, price, onCloseModal, productID}) => {
                     lastName: '',
                     phoneNumber: '',
                     address: '',
+                    productInfo: `${product} ${productID}`
                 });
             })
     }
@@ -90,8 +92,8 @@ const Modal = ({product, price, onCloseModal, productID}) => {
                             readOnly
                             type="text" 
                             name="productInfo" 
-                            className="hidden" 
-                            value={`${product} ${productID}`} />
+                            className="visually-hidden" 
+                            value={formData.productInfo} />
                         <div className="modal-form-info">
                             <h3 className="body-text form-product"><strong>{product}</strong></h3>
                             <div className="body-text form-price"><strong>{price}</strong></div>

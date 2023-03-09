@@ -18,11 +18,29 @@
     }
 }
 
+@media (max-width: 1149px) {
+    .catalog {
+        --min-item: 20rem;
+        &-wrap {
+            grid-template-columns: repeat(auto-fit, minmax(var(--min-item), 1fr));
+        }
+    }
+}
+
 @media (max-width: 767px) {
     .catalog {
         --min-item: 15rem;
         &-wrap {
-            grid-template-columns: repeat(auto-fit, minmax(var(--min-item), 1fr));
+            grid-template-columns: repeat(3, minmax(var(--min-item), 1fr));
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .catalog {
+        --min-item: 14rem;
+        &-wrap {
+            grid-template-columns: repeat(2, minmax(var(--min-item), 1fr));
         }
     }
 }
