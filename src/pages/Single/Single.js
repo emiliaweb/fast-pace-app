@@ -79,7 +79,7 @@ const Single = () => {
                 : null }
             </Portal>
 
-            <Showcase />
+            <Showcase title={<><span>Other</span> products</>} btnText={'Back to catalog'} />
         </>
     )
 } 

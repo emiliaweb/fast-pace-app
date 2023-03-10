@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Card from '../Card/Card';
-import Spinner from '../Spinner/Spinner';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
 import { randomNumber } from '../../services/functions';
 import useFPService from '../../services/FPService';
 
 import './Showcase.scss';
 
-const Showcase = () => {
+const Showcase = ({title, btnText}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const { getAllProducts } = useFPService();
@@ -57,17 +56,18 @@ const Showcase = () => {
     const cards = renderProducts();
     const skeleton = loading ? <CardSkeleton /> : null;
 
-    // console.log(products);
+    const defaultTitle = <><span>Latest</span> arrival</>;
+    const defaultBtnText = 'See more in catalog';
 
     return (
         <section className="showcase spacer-100">
             <div className="container">
-                <h2 className="title title--medium"><span>Latest</span> arrival</h2>
+                <h2 className="title title--medium">{title ? title : defaultTitle}</h2>
                 <div className="showcase-grid">
                     {skeleton}
                     {cards}
                 </div>
-                <Link to="/catalog" className="arrow-link showcase-link">See more in catalog</Link>
+                <Link to="/catalog" className="arrow-link showcase-link">{btnText ? btnText : defaultBtnText}</Link>
             </div>
         </section>
     )
