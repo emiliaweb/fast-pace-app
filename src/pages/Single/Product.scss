@@ -1,5 +1,11 @@
 .product {
     margin-top: 5rem;
+    &-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem 0;
+    }
     &-grid {
         display: grid;
         grid-template-columns: 34.4rem minmax(auto, 52.8rem);

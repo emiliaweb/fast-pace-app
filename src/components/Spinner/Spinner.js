@@ -1,8 +1,8 @@
 import './Spinner.scss';
 
-const Spinner = () => {
+const Spinner = ({customClass}) => {
     return (
-        <div class="lds-ellipsis">
+        <div class={`lds-ellipsis ${customClass}`}>
             <div></div>
             <div></div>
             <div></div>
