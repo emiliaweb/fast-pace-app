@@ -17,9 +17,9 @@ const Catalog = ({products, loading, error}) => {
     }
 
     const errorMsg = error ? <ErrorMsg /> : null;
-    const cards = !(error || loading) ? renderProducts() : null;
+    const cards = !(error || loading) ? renderProducts() : [];
     const skeleton = loading ? <CardSkeleton /> : null;
-    const message = cards.length === 0 && !loading ? <div className='body-text'>No products available</div> : null;
+    const message = cards.length === 0 && !(error || loading) ? <div className='body-text'>No products available</div> : null;
 
     return (
         <div className="catalog">
