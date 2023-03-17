@@ -6,6 +6,7 @@ import Showcase from '../../components/Showcase/Showcase';
 import Modal from '../../components/Modal/Modal';
 import useFPService from '../../services/FPService';
 import Spinner from '../../components/Spinner/Spinner';
+import ErrorMsg from '../../components/ErrorMsg/ErrorMsg';
 
 import './Product.scss';
 
@@ -13,7 +14,7 @@ import arrow from './arrow-right-light.svg';
 
 const Single = () => {
     const { productID } = useParams();
-    const { getProduct } = useFPService();
+    const { getProduct, error } = useFPService();
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
     const [isActiveModal, setIsActiveModal] = useState(false);
@@ -26,14 +27,17 @@ const Single = () => {
                     setProduct(data);
                     setLoading(false);
                 }, 1000)
-            });
+            })
+            .catch(() => {
+                setLoading(false);
+            })
     }
 
     useEffect(() => {
         getSingleProduct();
     }, [productID]);
 
-    const {id, imageURL, title, description, color, price, isAvailable} = product;
+    const {id, imageURL, title, description, color, price} = product;
 
     const onOrder = (e) => {
         e.preventDefault();
@@ -46,9 +50,9 @@ const Single = () => {
         }
     }
 
+    const errorMsg = error ? <ErrorMsg /> : null;
     const spinner = loading ? <div className="product-spinner"><Spinner /></div> : null;
-    const content = loading ? 
-    null : 
+    const content = !(error || loading) ? 
     <View 
         id={id}
         imageURL={imageURL}
@@ -56,7 +60,8 @@ const Single = () => {
         description={description}
         color={color}
         price={price} 
-        onOrder={onOrder} />;
+        onOrder={onOrder} /> 
+    : null;
 
     return (
         <>
@@ -66,6 +71,7 @@ const Single = () => {
                 </div>
             </div>
 
+            {errorMsg}
             {spinner}
             {content}
 

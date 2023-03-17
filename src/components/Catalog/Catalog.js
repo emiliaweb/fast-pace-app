@@ -1,9 +1,10 @@
 import Card from '../Card/Card';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
+import ErrorMsg from '../ErrorMsg/ErrorMsg';
 
 import './Catalog.scss';
 
-const Catalog = ({products, loading}) => {
+const Catalog = ({products, loading, error}) => {
     const renderProducts = () => {
         return products.map(item => (
             <Card 
@@ -15,13 +16,15 @@ const Catalog = ({products, loading}) => {
         ));
     }
 
-    const cards = renderProducts();
+    const errorMsg = error ? <ErrorMsg /> : null;
+    const cards = !(error || loading) ? renderProducts() : null;
     const skeleton = loading ? <CardSkeleton /> : null;
     const message = cards.length === 0 && !loading ? <div className='body-text'>No products available</div> : null;
 
     return (
         <div className="catalog">
             <div className="container catalog-wrap">
+                {errorMsg}
                 {cards}
                 {skeleton}
                 {message}

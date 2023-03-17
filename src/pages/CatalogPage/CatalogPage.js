@@ -6,7 +6,7 @@ import useFPService from "../../services/FPService";
 import Spotlight from "../../components/Spotlight/Spotlight";
 
 const CatalogPage = () => {
-    const { getAllProducts } = useFPService();
+    const { getAllProducts, error } = useFPService();
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [priceFilter, setPriceFilter] = useState('');
@@ -20,6 +20,9 @@ const CatalogPage = () => {
                     setProducts(data);
                     setLoading(false);
                 }, 1500)
+            })
+            .catch(() => {
+                setLoading(false);
             });
     }
 
@@ -79,8 +82,8 @@ const CatalogPage = () => {
                     <div className="body-text">Explore our catalog and find your best fit.</div>
                 </div>
             </div>
-            <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter}/>
-            <Catalog products={visibleProducts} loading={loading} />
+            <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter} />
+            <Catalog products={visibleProducts} loading={loading} error={error} />
             <Spotlight />
         </>
     )

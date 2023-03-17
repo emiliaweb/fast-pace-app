@@ -1,11 +1,16 @@
+import { useState } from "react";
+
 const useFPService = () => {
+    const [error, setError] = useState(false);
+
     const _url = 'https://raw.githubusercontent.com/emiliaweb/shoes-db/main/shoes-db.json';
 
     const getAllProducts = async () => {
         const response = await fetch(_url);
 
         if(!response.ok) {
-            throw new Error(`Could not fetch ${_url}, status ${response.status} ${response.statusText}`)
+            setError(true);
+            throw new Error(`Could not fetch ${_url}, status ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
@@ -33,9 +38,15 @@ const useFPService = () => {
         }
     }
 
+    const clearError = () => {
+        setError(false);
+    }
+
     return {
         getAllProducts,
-        getProduct
+        getProduct,
+        clearError,
+        error
     }
 }
 

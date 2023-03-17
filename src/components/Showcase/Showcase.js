@@ -5,13 +5,14 @@ import Card from '../Card/Card';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
 import { randomNumber } from '../../services/functions';
 import useFPService from '../../services/FPService';
+import ErrorMsg from '../ErrorMsg/ErrorMsg';
 
 import './Showcase.scss';
 
 const Showcase = ({title, btnText}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { getAllProducts } = useFPService();
+    const { getAllProducts, error } = useFPService();
 
     const getRandomProducts = () => {
         setLoading(true);
@@ -19,6 +20,9 @@ const Showcase = ({title, btnText}) => {
             .then(onProductsLoaded)
             .then(data => {
                 setProducts(data)
+                setLoading(false);
+            })
+            .catch(() => {
                 setLoading(false);
             })
     }
@@ -53,7 +57,8 @@ const Showcase = ({title, btnText}) => {
         ));
     }
 
-    const cards = renderProducts();
+    const errorMsg = error ? <ErrorMsg /> : null;
+    const cards = !(error || loading) ? renderProducts() : null;
     const skeleton = loading ? <CardSkeleton /> : null;
 
     const defaultTitle = <><span>Latest</span> arrival</>;
@@ -62,12 +67,13 @@ const Showcase = ({title, btnText}) => {
     return (
         <section className="showcase spacer-100">
             <div className="container">
-                <h2 className="title title--medium">{title ? title : defaultTitle}</h2>
+                <h2 className="title title--medium">{title || defaultTitle}</h2>
                 <div className="showcase-grid">
+                    {errorMsg}
                     {skeleton}
                     {cards}
                 </div>
-                <Link to="/catalog" className="arrow-link showcase-link">{btnText ? btnText : defaultBtnText}</Link>
+                <Link to="/catalog" className="arrow-link showcase-link">{btnText || defaultBtnText}</Link>
             </div>
         </section>
     )
