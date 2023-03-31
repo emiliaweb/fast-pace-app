@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './Spotlight.scss';
 import img from './about-img.png';
 import arrow from './arrow-right-light.svg';
@@ -13,10 +15,10 @@ const Spotlight = ({sectionID}) => {
                             <p>Text that will convince users to buy sneakers from this store. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. className aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
                             <p>Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.</p>
                         </div>
-                        <a href="#" className="btn spotlight-btn btn--primary">
+                        <Link to='/catalog' className="btn spotlight-btn btn--primary">
                             Shop now
                             <img src={arrow} alt="Arrow pointing to the right" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="spotlight-side">
                         <div className="spotlight-img">

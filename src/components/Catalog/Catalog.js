@@ -11,7 +11,7 @@ const Catalog = ({products, loading, error}) => {
         return products.map((item, i) => (
             <motion.div
                 initial={{opacity: 0}}
-                animate={{opacity: 1, transition: {delay: (i) * 0.2}}}>
+                animate={{opacity: 1, transition: {delay: (i % products.length) * 0.2}}}>
                 <Card 
                     key={item.id}
                     itemID={item.id}
