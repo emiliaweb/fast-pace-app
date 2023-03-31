@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import Filters from "../../components/Filters/Filters";
 import Catalog from "../../components/Catalog/Catalog";
 import useFPService from "../../services/FPService";
 import Spotlight from "../../components/Spotlight/Spotlight";
+import params from "../../services/pageTransitionParams";
 
 const CatalogPage = () => {
     const { getAllProducts, error } = useFPService();
@@ -72,10 +74,8 @@ const CatalogPage = () => {
 
     const visibleProducts = filterByColor(filterByPrice());
 
-    console.log('render');
-
     return (
-        <>
+        <motion.div {...params}>
             <div className="spacer-170">
                 <div className="container">
                     <h1 className="title title--big">Find your <span>new sneakers</span></h1>
@@ -85,7 +85,7 @@ const CatalogPage = () => {
             <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter} />
             <Catalog products={visibleProducts} loading={loading} error={error} />
             <Spotlight />
-        </>
+        </motion.div>
     )
 }
 

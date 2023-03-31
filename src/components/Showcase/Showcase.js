@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import Card from '../Card/Card';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
@@ -47,13 +48,17 @@ const Showcase = ({title, btnText}) => {
     }, []);
 
     const renderProducts = () => {
-        return products.map(item => (
-            <Card 
-                key={item.id}
-                itemID={item.id}
-                title={item.title}
-                price={item.price}
-                img={item.imageURL} />
+        return products.map((item, i) => (
+            <motion.div
+                initial={{opacity: 0}}
+                animate={{opacity: 1, transition: {delay: (i%4) * 0.5}}}>
+                <Card 
+                    key={item.id}
+                    itemID={item.id}
+                    title={item.title}
+                    price={item.price}
+                    img={item.imageURL} />
+            </motion.div>
         ));
     }
 

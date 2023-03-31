@@ -2,9 +2,9 @@ import './Spotlight.scss';
 import img from './about-img.png';
 import arrow from './arrow-right-light.svg';
 
-const Spotlight = () => {
+const Spotlight = ({sectionID}) => {
     return (
-        <section className="spotlight spacer-100">
+        <section className="spotlight spacer-100" id={sectionID ?? 'spotlight'}>
             <div className="container">
                 <div className="spotlight-wrap">
                     <div className="spotlight-side">

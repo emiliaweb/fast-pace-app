@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import './Modal.scss';
 import './Form.scss';
@@ -55,11 +56,20 @@ const Modal = ({product, price, onCloseModal, productID}) => {
     }
 
     return (
-        <div className="modal">
+        <motion.div 
+            initial={{opacity: 0}}
+            animate={{opacity: 1, transition: {duration: .2}}}
+            className="modal">
             <div className="modal-overlay" onClick={onClose}>
-                <div className="modal-content">
+                <motion.div 
+                    initial={{opacity: 0, transform: 'scale(.9)'}}
+                    animate={{opacity: 1, transform: 'scale(1)', transition: {duration: .4, delay: .2}}}
+                    className="modal-content">
                     <h2 className="title title--small modal-title">{formTitle}</h2>
-                    <form className={`form modal-form ${isHiddenForm ? 'hidden' : null}`} onSubmit={onSendEmail} ref={form}>
+                    <form 
+                        className={`form modal-form ${isHiddenForm ? 'hidden' : null}`} 
+                        onSubmit={onSendEmail} 
+                        ref={form}>
                         <input 
                             onInput={onInput} 
                             type="text" 
@@ -106,9 +116,9 @@ const Modal = ({product, price, onCloseModal, productID}) => {
                             </button>
                         </div>
                     </form>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

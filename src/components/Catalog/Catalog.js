@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import Card from '../Card/Card';
 import CardSkeleton from '../CardSkeleton/CardSkeleton';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
@@ -6,13 +8,17 @@ import './Catalog.scss';
 
 const Catalog = ({products, loading, error}) => {
     const renderProducts = () => {
-        return products.map(item => (
-            <Card 
-                key={item.id}
-                itemID={item.id}
-                title={item.title}
-                price={item.price}
-                img={item.imageURL} />
+        return products.map((item, i) => (
+            <motion.div
+                initial={{opacity: 0}}
+                animate={{opacity: 1, transition: {delay: (i) * 0.2}}}>
+                <Card 
+                    key={item.id}
+                    itemID={item.id}
+                    title={item.title}
+                    price={item.price}
+                    img={item.imageURL} />
+            </motion.div>
         ));
     }
 

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import './Header.scss';
 import logo from './fast-pace-logo.svg';
@@ -17,7 +18,7 @@ const Header = () => {
                                 <Link to="/">Home</Link>
                             </li>
                             <li className="header-list-item">
-                                <Link to="/">About</Link>
+                                <HashLink to="/#about">About</HashLink>
                             </li>
                             <li className="header-list-item">
                             <Link to="/catalog">Catalog</Link>

@@ -1,4 +1,5 @@
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import './Footer.scss';
 import logo from './fast-pace-logo-white.svg';
@@ -37,7 +38,7 @@ const Footer = () => {
                                 <Link to="/">Home</Link>
                             </li>
                             <li className="footer-menu-item">
-                                <Link to="/">About</Link>
+                                <HashLink to="/#about">About</HashLink>
                             </li>
                             <li className="footer-menu-item">
                                 <Link to="/Catalog">Catalog</Link>

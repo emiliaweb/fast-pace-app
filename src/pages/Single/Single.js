@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import {createPortal} from 'react-dom';
+import { motion } from 'framer-motion';
 
 import Showcase from '../../components/Showcase/Showcase';
 import Modal from '../../components/Modal/Modal';
@@ -91,12 +92,16 @@ const Single = () => {
 } 
 
 const Portal = (props) => {
-    return ReactDOM.createPortal(props.children, document.body);
+    return createPortal(props.children, document.body);
 }
 
 const View = ({id, imageURL, title, description, color, price, onOrder}) => {
     return (
-        <div className="product" data-id={id}>
+        <motion.div 
+            initial={{opacity: 0}}
+            animate={{opacity: 1, transition: {duration: 1}}}
+            className="product" 
+            data-id={id}>
             <div className="container">
                 <div className="product-grid">
                     <div className="product-side">
@@ -129,7 +134,7 @@ const View = ({id, imageURL, title, description, color, price, onOrder}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
