@@ -51,9 +51,9 @@ const Showcase = ({title, btnText}) => {
         return products.map((item, i) => (
             <motion.div
                 initial={{opacity: 0}}
-                animate={{opacity: 1, transition: {delay: (i%4) * 0.5}}}>
+                animate={{opacity: 1, transition: {delay: (i%4) * 0.5}}}
+                key={item.id}>
                 <Card 
-                    key={item.id}
                     itemID={item.id}
                     title={item.title}
                     price={item.price}
