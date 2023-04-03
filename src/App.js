@@ -1,5 +1,5 @@
-import { Routes, Route, BrowserRouter,useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from "framer-motion";
+import { Routes, Route,useLocation } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -14,6 +14,10 @@ import './assets/style/style.scss';
 
 function App() {
   const location = useLocation();
+
+  const lang = window.navigator.language.replace(/[^a-z]/g, '');
+
+  console.log(lang);
 
   return (
     <>
