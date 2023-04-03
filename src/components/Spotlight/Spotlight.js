@@ -4,7 +4,12 @@ import './Spotlight.scss';
 import img from './about-img.png';
 import arrow from './arrow-right-light.svg';
 
-const Spotlight = ({sectionID}) => {
+const Spotlight = ({sectionID, hideBtn}) => {
+    const btn = hideBtn ? null : 
+    <Link to='/catalog' className="btn spotlight-btn btn--primary">
+        Shop now
+        <img src={arrow} alt="Arrow pointing to the right" />
+    </Link>;
     return (
         <section className="spotlight spacer-100" id={sectionID ?? 'spotlight'}>
             <div className="container">
@@ -15,10 +20,7 @@ const Spotlight = ({sectionID}) => {
                             <p>Text that will convince users to buy sneakers from this store. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. className aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
                             <p>Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.</p>
                         </div>
-                        <Link to='/catalog' className="btn spotlight-btn btn--primary">
-                            Shop now
-                            <img src={arrow} alt="Arrow pointing to the right" />
-                        </Link>
+                        {btn}
                     </div>
                     <div className="spotlight-side">
                         <div className="spotlight-img">

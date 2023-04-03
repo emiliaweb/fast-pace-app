@@ -84,7 +84,7 @@ const CatalogPage = () => {
             </div>
             <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter} />
             <Catalog products={visibleProducts} loading={loading} error={error} />
-            <Spotlight />
+            <Spotlight hideBtn={true} />
         </motion.div>
     )
 }
