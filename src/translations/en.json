@@ -1,0 +1,71 @@
+{
+    "common": {
+        "nav": {
+            "home": "Home",
+            "about": "About",
+            "catalog": "Catalog"
+        },
+        "address": "8635 Hermann Groves, Delmer,\nNorth Carolina, 68967-0788",
+        "contact": "Contact us",
+        "copyright": {
+            "body": "Designed & coded by",
+            "author": "Emilia"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Jump into your new sneakers",
+            "text": "Find your shoes from our various collections.",
+            "buttons": {
+                "primary": "Explore shoes",
+                "secondary": "Learn more"
+            }
+        },
+        "showcase": {
+            "title": "Latest arrival",
+            "button": "See more in catalog"
+        }
+    },
+    "spotlight": {
+        "title": "Here you will find exceptional quality shoes",
+        "text": "Welcome to our sneaker store! We are excited to offer you a wide selection of high-quality sneakers from the best manufacturers. Our store is dedicated to providing you with the latest trends. \nWe are confident that you will find the perfect pair of sneakers to suit your needs and style.",
+        "button": "Shop now"
+    },
+    "catalog": {
+        "title": "Find your new sneakers",
+        "text": "Explore our catalog and find your best fit.",
+        "filters": {
+            "price": ["Below 50$", "Above 50$"]
+        }
+    },
+    "single": {
+        "breadcrumbs": {
+            "parent": "Catalog"
+        },
+        "product": {
+            "color": "Color",
+            "button": "Order now"
+        },
+        "showcase": {
+            "title": "Other products",
+            "button": "Back to catalog"
+        }
+    },
+    "no-match": {
+        "title": "Requested page was not found",
+        "button": "Back to home page",
+        "text": "Or check out our other products"
+    },
+    "form": {
+        "title": "Fill out your credentials to proceed with the order",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "phoneNumber": "Phone number",
+        "address": "Address",
+        "policy": {
+            "body": "By submitting this form you automatically agree to our",
+            "linkText": "Privacy Policy"
+        },
+        "submit": "Submit"
+    }
+}
