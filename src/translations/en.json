@@ -66,6 +66,10 @@
             "body": "By submitting this form you automatically agree to our",
             "linkText": "Privacy Policy"
         },
-        "submit": "Submit"
+        "submit": "Submit",
+        "message": {
+            "success": "Order placed successfully. \nWe'll inform you about the status of your order within an hour.",
+            "failure": "Something went wrong."
+        }
     }
 }

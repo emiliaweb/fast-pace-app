@@ -1,4 +1,4 @@
-import { Routes, Route,useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
 
 import Header from './components/Header/Header';
@@ -14,10 +14,6 @@ import './assets/style/style.scss';
 
 function App() {
   const location = useLocation();
-
-  const lang = window.navigator.language.replace(/[^a-z]/g, '');
-
-  console.log(lang);
 
   return (
     <>
