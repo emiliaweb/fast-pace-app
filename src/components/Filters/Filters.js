@@ -16,8 +16,8 @@ const Filters = ({onSetFilter, color, price}) => {
     }
 
     const priceFilterData = [
-        { label: 'Below 50$', value: '<50' },
-        { label: 'Above 50$', value: '>50' }
+        { label: 'Ниже 50$', value: '<50' },
+        { label: 'Выше 50$', value: '>50' }
     ];
 
     const colorFilterData = [

@@ -17,7 +17,7 @@ const Modal = ({product, price, onCloseModal, productID}) => {
         productInfo: `${product} ${productID}`
     });
     const [isHiddenForm, setIsHiddenForm] = useState(false);
-    const [formTitle, setFormTitle] = useState(<><span>Fill out your credentials</span> to proceed with the order</>);
+    const [formTitle, setFormTitle] = useState(<><span>Заполните данные</span> чтобы оформить заказ</>);
 
     const onClose = (e) => {
         onCloseModal(e.target);
@@ -31,11 +31,11 @@ const Modal = ({product, price, onCloseModal, productID}) => {
         emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
             .then(() => {
                 setIsHiddenForm(true);
-                setFormTitle(<>Order placed <span>successfully</span>. <br /> We'll inform you about the status of your order within an hour.</>);
+                setFormTitle(<>Заявка отправлена <span>успешно</span>. <br /> Ожидайте обратной связи в течение часа. </>);
             })
             .catch(() => {
                 setIsHiddenForm(true);              
-                setFormTitle(<>Something went <span>wrong</span></>);  
+                setFormTitle(<>Что-то пошло <span>не так</span></>);  
             })
             .finally(() => {
                 setFormData({
@@ -45,7 +45,7 @@ const Modal = ({product, price, onCloseModal, productID}) => {
                     address: '',
                     productInfo: `${product} ${productID}`
                 });
-            })
+            });
     }
 
     const onInput = (e) => {
@@ -74,28 +74,28 @@ const Modal = ({product, price, onCloseModal, productID}) => {
                             onInput={onInput} 
                             type="text" 
                             name="firstName" 
-                            placeholder="First name*" 
+                            placeholder="Имя*" 
                             className="input" 
                             value={formData.firstName} />
                         <input 
                             onInput={onInput} 
                             type="text" 
                             name="lastName" 
-                            placeholder="Last name*" 
+                            placeholder="Фамилия*" 
                             className="input" 
                             value={formData.lastName} />
                         <input 
                             onInput={onInput} 
                             type="text" 
                             name="phoneNumber" 
-                            placeholder="Phone number*" 
+                            placeholder="Номер телефона*" 
                             className="input" 
                             value={formData.phoneNumber} />
                         <input 
                             onInput={onInput} 
                             type="text" 
                             name="address" 
-                            placeholder="Address*" 
+                            placeholder="Адрес*" 
                             className="input" 
                             value={formData.address} />
                         <input 
@@ -109,9 +109,9 @@ const Modal = ({product, price, onCloseModal, productID}) => {
                             <div className="body-text form-price"><strong>{price}</strong></div>
                         </div>
                         <div className="modal-form-footer">
-                            <div className="form-agreement">By submitting this form you automatically agree to our <a href="#">Privacy Policy</a></div>
+                            <div className="form-agreement">Отправляя форму вы соглашаетесь с <a href="#">Политикой Конфиденциальности</a></div>
                             <button className="btn btn--dark modal-form-btn">
-                                Submit
+                                Готово
                                 <img src={arrow} alt="Arrow pointing to the right" />
                             </button>
                         </div>

@@ -14,8 +14,8 @@ const Footer = () => {
                             <img src={logo} alt="Fast Pace" />
                         </Link>
                         <div className="footer-credit">
-                            (c) 2020-2023 Fast Pace <br />
-                            Designed & coded by <a href="https://github.com/emiliaweb">Emilia</a>
+                            (c) 2023 Fast Pace <br />
+                            Дизайн и разработка - <a href="https://github.com/emiliaweb">Эмилия</a>
                         </div>
                     </div>
                     <div className="footer-col">
@@ -23,7 +23,7 @@ const Footer = () => {
                             <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="footer-info-icon">
                                 <path d="M11.0023 0C9.55297 0.00059495 8.118 0.287427 6.77979 0.844032C5.44159 1.40064 4.22648 2.21605 3.20422 3.24348C2.18197 4.27091 1.37269 5.49011 0.82284 6.83111C0.272992 8.17211 -0.00659756 9.6085 0.000118171 11.0578C0.000118171 18.6986 7.88201 25.7043 10.3069 27.5588C10.5104 27.7269 10.7662 27.8188 11.0301 27.8188C11.2941 27.8188 11.5499 27.7269 11.7534 27.5588C14.1829 25.6486 21.9999 18.6986 21.9999 11.0578C22.0066 9.60889 21.7272 8.17288 21.1776 6.83218C20.628 5.49148 19.8192 4.27249 18.7974 3.24512C17.7756 2.21776 16.5611 1.40224 15.2234 0.845365C13.8857 0.288487 12.4513 0.00120513 11.0023 0ZM11.0023 15.6293C10.0853 15.6293 9.18892 15.3574 8.42647 14.848C7.66401 14.3385 7.06975 13.6144 6.71883 12.7672C6.36791 11.92 6.2761 10.9878 6.45499 10.0884C6.63389 9.18903 7.07547 8.3629 7.72388 7.71449C8.37229 7.06608 9.19842 6.6245 10.0978 6.4456C10.9972 6.26671 11.9294 6.35852 12.7766 6.70944C13.6238 7.06036 14.3479 7.65462 14.8574 8.41708C15.3668 9.17953 15.6387 10.0759 15.6387 10.9929C15.6387 12.2226 15.1502 13.4019 14.2808 14.2714C13.4113 15.1409 12.232 15.6293 11.0023 15.6293Z" fill="#F3F7FA"/>
                             </svg>
-                            <address>8635 Hermann Groves, Delmer, <br /> North Carolina, 68967-0788</address>
+                            <address>8635 Германн Гроувз, Делмер,<br /> Сев. Каролина, 68967-0788</address>
                         </a>
                         <a href="tel:+19035472910" className="footer-info">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="footer-info-icon">
@@ -35,18 +35,18 @@ const Footer = () => {
                     <nav className="footer-col">
                         <ul className="footer-menu">
                             <li className="footer-menu-item">
-                                <Link to="/">Home</Link>
+                                <Link to="/">Главная</Link>
                             </li>
                             <li className="footer-menu-item">
-                                <HashLink to="/#about">About</HashLink>
+                                <HashLink to="/#about">О сайте</HashLink>
                             </li>
                             <li className="footer-menu-item">
-                                <Link to="/Catalog">Catalog</Link>
+                                <Link to="/Catalog">Каталог</Link>
                             </li>
                         </ul>
                     </nav>
                     <div className="footer-col">
-                        <div className="footer-contact">Contact us</div>
+                        <div className="footer-contact">Контакты</div>
                         <div className="footer-network">
                             <a href="#" aria-label="Email" className="footer-network-link">
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">

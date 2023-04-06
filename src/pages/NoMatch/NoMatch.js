@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import Showcase from "../../components/Showcase/Showcase";
 import params from "../../services/pageTransitionParams";
@@ -7,9 +8,9 @@ const NoMatch = () => {
     return (
         <motion.div {...params}>
             <div className="container spacer-170">
-                <h1 className="title title--medium">Requested page was <span>not found</span></h1>
-                <a href="#" className="body-text arrow-link">Back to home page</a>
-                <div className="body-text">Or check out our other products:</div>
+                <h1 className="title title--medium">Запрошенная страница <span>не найдена</span></h1>
+                <Link to="/" className="body-text arrow-link">Назад на главную</Link>
+                <div className="body-text">Или посмотрите наши другие товары:</div>
             </div>
             <Showcase />
         </motion.div>

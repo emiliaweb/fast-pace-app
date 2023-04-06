@@ -66,8 +66,8 @@ const Showcase = ({title, btnText}) => {
     const cards = !(error || loading) ? renderProducts() : null;
     const skeleton = loading ? <CardSkeleton /> : null;
 
-    const defaultTitle = <><span>Latest</span> arrival</>;
-    const defaultBtnText = 'See more in catalog';
+    const defaultTitle = <><span>Последнее</span> поступление</>;
+    const defaultBtnText = 'Смотреть больше в каталоге';
 
     return (
         <section className="showcase spacer-100">

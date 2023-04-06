@@ -78,8 +78,8 @@ const CatalogPage = () => {
         <motion.div {...params}>
             <div className="spacer-170">
                 <div className="container">
-                    <h1 className="title title--big">Find your <span>new sneakers</span></h1>
-                    <div className="body-text">Explore our catalog and find your best fit.</div>
+                    <h1 className="title title--big">Найдите свои <span>новые кроссовки</span></h1>
+                    <div className="body-text">Изучите наш каталог и найдите свою идеальную пару.</div>
                 </div>
             </div>
             <Filters onSetFilter={onSetFilter} price={priceFilter} color={colorFilter} />
