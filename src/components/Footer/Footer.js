@@ -15,7 +15,7 @@ const Footer = () => {
                         </Link>
                         <div className="footer-credit">
                             (c) 2023 Fast Pace <br />
-                            Дизайн и разработка - <a href="https://github.com/emiliaweb">Эмилия</a>
+                            Дизайн и разработка - <a href="https://github.com/isemilia">Эмилия</a>
                         </div>
                     </div>
                     <div className="footer-col">
